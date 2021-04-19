@@ -6,9 +6,9 @@ let options = {
 function intersectionHandler(entries, observer) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classlist.add("active");
+            entry.target.classList.add("active");
         } else {
-            entry.target.classlist.remove("active");
+            entry.target.classList.remove("active");
         }
       });
 }
@@ -17,6 +17,6 @@ let observer = new IntersectionObserver(intersectionHandler, options);
 
 let images = document.querySelectorAll("img");
 
-images.forEach((image) => {
+images.forEach ((image) => {
     observer.observe(image);
 });
